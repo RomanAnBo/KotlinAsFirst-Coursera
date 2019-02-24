@@ -17,7 +17,16 @@ fun pointInsideCircle(x: Double, y: Double, x0: Double, y0: Double, r: Double) =
  * Четырехзначное число назовем счастливым, если сумма первых двух ее цифр равна сумме двух последних.
  * Определить, счастливое ли заданное число, вернуть true, если это так.
  */
-fun isNumberHappy(number: Int): Boolean = TODO()
+fun isNumberHappy(number: Int): Boolean {
+    val a: Int = number / 1000
+    val b : Int = number / 100 % 10
+    val c : Int = number / 10 % 10
+    val d : Int = number % 10
+    return when {
+        ((a + b) == (c + d)) -> true
+        else -> false
+    }
+}
 
 /**
  * Простая
@@ -26,9 +35,17 @@ fun isNumberHappy(number: Int): Boolean = TODO()
  * Определить, угрожают ли они друг другу. Вернуть true, если угрожают.
  * Считать, что ферзи не могут загораживать друг друга.
  */
-fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean = TODO()
+fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
+    val a : Int
+            if (x1 >= x2)  a = (x1 - x2) else a = (x2 - x1)
+    val b : Int
+    if (y1 >= y2)  b = (y1 - y2)  else b = (y2 - y1)
+    return when {
 
-
+        (x1 == x2) || (y1 == y2)  || (a == b) -> true
+                else -> false
+    }
+}
 /**
  * Простая
  *
@@ -56,4 +73,24 @@ fun circleInside(x1: Double, y1: Double, r1: Double,
  * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  * Вернуть true, если кирпич пройдёт
  */
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int) : Boolean {
+
+    val firstMin = min(a, b)
+    val firstMax = max(a, b)
+    val secondMin = min(firstMax, c)
+
+    val kirpi4ZashelLezha = firstMin <= r && secondMin <= s
+    val kirpi4ZashelStoya = firstMin <= s && secondMin <= r
+
+    return kirpi4ZashelLezha || kirpi4ZashelStoya
+
+
+
+//    return when {
+//        ((firstMin <= r) && (secondMin <= s)) || ((firstMin <= s) && (secondMin <= r)) ->  true
+//        else -> false
+//    }
+}
+
+
+

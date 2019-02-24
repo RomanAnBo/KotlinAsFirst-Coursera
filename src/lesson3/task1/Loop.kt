@@ -65,16 +65,38 @@ fun digitCountInNumber(n: Int, m: Int): Int =
  * Например, число 1 содержит 1 цифру, 456 -- 3 цифры, 65536 -- 5 цифр.
  *
  * Использовать операции со строками в этой задаче запрещается.
- */
+*/
 fun digitNumber(n: Int): Int = TODO()
-
+   // var kolich : Int = 1
+    //var newN  : Int = n
+    //while ( newN / 10 >= 1) kolich = kolich + 1
+    //return kolich
 /**
  * Простая
  *
  * Найти число Фибоначчи из ряда 1, 1, 2, 3, 5, 8, 13, 21, ... с номером n.
  * Ряд Фибоначчи определён следующим образом: fib(1) = 1, fib(2) = 1, fib(n+2) = fib(n) + fib(n+1)
  */
-fun fib(n: Int): Int = TODO()
+fun fib(n: Int): Int {
+   /**
+    var result : Int = 1
+    if (n <= 2) result = 1 else {
+
+        for (n in 2..n) result = fib(n - 2) + fib(n - 1)
+
+    }
+    return result
+
+    var result: Int
+
+    if (n <= 2) result = 1
+    else
+        result = fib(n - 2) + fib(n - 1)
+
+
+    return result
+    */
+}
 
 /**
  * Простая
@@ -89,7 +111,10 @@ fun lcm(m: Int, n: Int): Int = TODO()
  *
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
-fun minDivisor(n: Int): Int = TODO()
+fun minDivisor(n: Int): Int {
+    var delitel : Int
+
+}
 
 /**
  * Простая
